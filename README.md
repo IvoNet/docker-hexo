@@ -32,7 +32,10 @@ This command you do on a running hexo to re-render static content. e.g. when a n
 docker exec -it hexo hexo generate --debug
 ```
 
-or
+## bin folder
+
+Please look in the bin folder for some example scripts that might help...
+
 
 # /script
 
@@ -44,3 +47,7 @@ if you put a shell script in that folder and restart docker it will be executed 
 this folder contains the blog. If empty it will be filled with a default `landscape` theme
 if it already contains stuff then it will just start the server
 
+
+# Contact
+
+My twitter handle: @ivonet
