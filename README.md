@@ -1,6 +1,8 @@
 # ivonet/hexo
 
-This image contains a Hexo distro
+This image contains a Hexo distro.
+
+It is actually a the base for my [website](https://www.ivonet.nl).
 
 # Usage example(s)
 
