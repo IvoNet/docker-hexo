@@ -23,7 +23,11 @@ if  [ ! "$(ls -A ./)" ]; then
     echo "Template built."
 fi
 
-echo "Check if we want to stay on the edge..."
-
+if [ ! "$EDGE" = "1" ]; then
+  echo "EDGE not requested, keeping stable version"
+else
+  echo "EDGE requested, updating to latest version"
+  npm update --save
+fi
 
 exec "$@"
