@@ -30,4 +30,8 @@ else
   npm update --save
 fi
 
+echo "Generating static content..."
+hexo generate
+echo "Rendering done."
+
 exec "$@"
