@@ -18,4 +18,4 @@ if you put a shell script in that folder and restart docker it will be executed 
 # /blog
 
 this folder contains the blog. If empty it will be filled with a default `landscape` theme
-if it already contains tuff then it will just start the server
+if it already contains stuff then it will just start the server
