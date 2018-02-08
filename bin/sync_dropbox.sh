@@ -8,8 +8,8 @@
 # Edit the following variables to point to the correct locations
 ################################################################################
 
-DROPBOX_HEXO_SOURCE="/volume1/CloudSync/Dropbox/Apps/Editorial/www.ivonet.nl/source/"
-HEXO_BLOG_LOCATION="/volume1/docker/hexo/www.ivonet.nl/source"
+DROPBOX_HEXO_SOURCE="PATH_TO_DROPBOX_HEXO_ON_YOUR_NAS/source/"
+HEXO_BLOG_LOCATION="PATH_TO_DOCKER_HEXO_ON_YOUR_NAS/source"
 DOCKER_NAME="hexo"
 
 ################################################################################
