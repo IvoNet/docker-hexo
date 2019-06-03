@@ -1,6 +1,6 @@
-FROM alpine:3.7
+FROM alpine:3.9
 
-MAINTAINER IvoNet <Webmaster@IvoNet.nl>
+LABEL maintainer="IvoNet - @ivonet"
 WORKDIR /blog
 
 RUN apk add --no-cache curl nodejs nodejs-npm git &&\

@@ -19,6 +19,8 @@ if  [ ! "$(ls -A ./)" ]; then
     npm install --save hexo-generator-tag
     npm install --save hexo-renderer-pug
     npm install --save hexo-generator-feed
+    npm install --save hexo-generator-feed-per-category
+    npm install --save hexo-generator-json-content
     npm install --save hexo-hey
     echo "Template built."
 fi
@@ -27,6 +29,7 @@ if [ ! "$EDGE" = "1" ]; then
   echo "EDGE not requested, keeping stable version"
 else
   echo "EDGE requested, updating to latest version"
+  npm i -g npm
   npm update --save
 fi
 
