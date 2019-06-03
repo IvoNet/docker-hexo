@@ -1,57 +1,37 @@
-# docker-hexo
+# hexo
 
-This image contains a Hexo distro.
+Docker image for: hexo
 
-It is actually a the base for my [website](https://www.ivonet.nl).
+# Usage
 
-# Usage example(s)
+See `run.sh` and `hexo.sh` for examples on how to run the application.
 
-## Interactive EDGEd mode
+# Exposed Ports
 
-Start hexo in interactive mode with two folders mounted and in EDGE mode...
-EDGE mode will always try to upgrade hexo after a restart. This might break your
-build if the update was not a good one. (default EDGE=0)
+| Port number| Description                                                       |
+| :----------| :-----------------------------------------------------------------|
+| `32000`    | The application runs here                                         |
+|            | |
 
-```bash
-docker run \
-       --rm \
-       --name hexo \
-       -it \
-       -v $(pwd)/blog:/blog \
-       -v $(pwd)/scripts:/scripts \
-       -p 4000:4000 \
-       -e EDGE=0 \
-       ivonet/hexo:latest
-```
+# Volumes
 
-## Generate content
+| Volume path          | Description                                             |
+| :--------------------| :-------------------------------------------------------|
+| | |
+| | |
 
-This command you do on a running hexo to re-render static content. e.g. when a new blog was added.
+# Environment variables
 
-```bash
-docker exec -it hexo hexo generate --debug
-```
+| Environment | Description                                        |  Default   |
+| :-----------| :--------------------------------------------------|:-----------|
+| | | |
+| | | |
 
-## bin folder
+# For developers
 
-Please look in the bin folder for some example scripts that might help...
+## Build
 
-
-# /script
-
-This folder can be used to install "aftermarket" stuff :-)
-if you put a shell script in that folder and restart docker it will be executed in the docker container
-
-# /blog
-
-this folder contains the blog. If empty it will be filled with a default `landscape` theme
-if it already contains stuff then it will just start the server
-
-
-# Contact
-
-My twitter handle: @ivonet
-
+See `build.sh` for build instructions
 
 ---
 # License
@@ -69,3 +49,4 @@ My twitter handle: @ivonet
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+

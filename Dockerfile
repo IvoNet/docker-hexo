@@ -1,16 +1,10 @@
-FROM alpine:3.9
+FROM ubuntu:18.04
+LABEL maintainer="Ivo Woltring - @ivonet"
+MAINTAINER IvoNet <webmaster@ivonet.nl>
 
-LABEL maintainer="IvoNet - @ivonet"
-WORKDIR /blog
+RUN apt-get update \
+ && apt-get install --no-install-recommends -y  \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN apk add --no-cache curl nodejs nodejs-npm git &&\
-    mkdir -p /blog &&\
-    mkdir -p /scripts &&\
-    npm install -g hexo-cli
-
-ADD entrypoint.sh /entrypoint.sh
-
-ENV EDGE="0"
-EXPOSE 4000
-VOLUME ["/blog", "/scripts"]
-ENTRYPOINT ["/entrypoint.sh", "hexo", "server", "--ip", "0.0.0.0", "--static"]
+ENTRYPOINT [""]
