@@ -1,6 +1,9 @@
 # hexo
 
-Docker image for: hexo
+
+This image contains a Hexo distro.
+
+It is actually a the base for my [website](https://www.ivonet.nl).
 
 # Usage
 
@@ -10,28 +13,75 @@ See `run.sh` and `hexo.sh` for examples on how to run the application.
 
 | Port number| Description                                                       |
 | :----------| :-----------------------------------------------------------------|
-| `32000`    | The application runs here                                         |
-|            | |
+| `4000`     | The application runs here                                         |
 
 # Volumes
 
 | Volume path          | Description                                             |
 | :--------------------| :-------------------------------------------------------|
-| | |
-| | |
+| `/blog`              | The location where the blog will be mounted. It does not exist it will be created.|
+| `/scripts`           | Put scripts here and during next startup if the container they will be run.|
 
 # Environment variables
 
 | Environment | Description                                        |  Default   |
 | :-----------| :--------------------------------------------------|:-----------|
-| | | |
-| | | |
+| `EDGE`      | in edgemode the container will look for updates on every boot| `0`|
+
+# Usage example(s)
+
+## Interactive EDGEd mode
+
+Start hexo in interactive mode with two folders mounted and in EDGE mode...
+EDGE mode will always try to upgrade hexo after a restart. This might break your
+build if the update was not a good one. (default EDGE=0)
+
+```bash
+docker run \
+       --rm \
+       --name hexo \
+       -it \
+       -v $(pwd)/blog:/blog \
+       -v $(pwd)/scripts:/scripts \
+       -p 4000:4000 \
+       -e EDGE=0 \
+       ivonet/hexo:1.1.0
+```
+
+# Commands
+
+## Generate content
+
+This command you do on a running hexo to re-render static content. e.g. when a new blog was added.
+
+```bash
+docker exec -it hexo hexo generate --debug
+```
+
+## bin folder
+
+Please look in the bin folder for some example scripts that might help...
+
+# /script
+
+This folder can be used to install "aftermarket" stuff :-)
+if you put a shell script in that folder and restart docker it will be executed in the docker container
+
+# /blog
+
+this folder contains the blog. If empty it will be filled with a default `landscape` theme
+if it already contains stuff then it will just start the server
+
 
 # For developers
 
 ## Build
 
 See `build.sh` for build instructions
+
+# Contact
+
+My twitter handle: @ivonet
 
 ---
 # License
@@ -49,4 +99,6 @@ See `build.sh` for build instructions
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+
+
 

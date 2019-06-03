@@ -7,4 +7,5 @@ RUN apt-get update \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+EXPOSE 4000
 ENTRYPOINT [""]
