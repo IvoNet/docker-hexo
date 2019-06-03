@@ -1,4 +1,4 @@
-# ivonet/hexo
+# docker-hexo
 
 This image contains a Hexo distro.
 
@@ -21,7 +21,7 @@ docker run \
        -v $(pwd)/scripts:/scripts \
        -p 4000:4000 \
        -e EDGE=0 \
-       ivonet/hexo:1.0.0
+       ivonet/hexo:latest
 ```
 
 ## Generate content
