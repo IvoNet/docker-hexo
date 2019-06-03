@@ -20,7 +20,7 @@ See `run.sh` and `hexo.sh` for examples on how to run the application.
 | Volume path          | Description                                             |
 | :--------------------| :-------------------------------------------------------|
 | `/blog`              | The location where the blog will be mounted. It does not exist it will be created.|
-| `/scripts`           | Put scripts here and during next startup if the container they will be run.|
+| `/scripts`           | Put scripts here and during next startup if the container they will be run (optional).|
 
 # Environment variables
 

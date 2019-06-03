@@ -9,7 +9,9 @@ docker run          \
     -it             \
     --rm            \
     --name $NAME    \
-    -p ${PORT}:8080 \
+    -v $(pwd)/blog:/blog \
+    -v $(pwd)/scripts:/scripts \
+    -p ${PORT}:4000 \
     $EP             \
     ivonet/$NAME
 

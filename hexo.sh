@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 NAME=hexo
 PORT=8080
-WAIT=3
 
 if [ ! "$(docker ps -q -f name=$NAME)" ]; then
 
@@ -12,10 +11,12 @@ if [ ! "$(docker ps -q -f name=$NAME)" ]; then
         open http://localhost:$PORT
     else
         echo "Starting new $NAME container..."
-        docker run                                    \
-            -d                                        \
-            --name $NAME                              \
-            -p $PORT:8080                             \
+        docker run                     \
+            -d                         \
+            --name $NAME               \
+            -v $(pwd)/blog:/blog       \
+            -v $(pwd)/scripts:/scripts \
+            -p $PORT:4000              \
             ivonet/$NAME
     fi
 else
