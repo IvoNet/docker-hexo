@@ -12,7 +12,8 @@ echo "Check if folder is empty."
 
 if  [ ! "$(ls -A ./)" ]; then
     hexo init /blog
-    npm install --save hexo-generator-sitemap
+    #    npm install --save hexo-generator-sitemap
+    npm install --save hexo-generator-seo-friendly-sitemap
     npm install --save hexo-generator-index
     npm install --save hexo-generator-archive
     npm install --save hexo-generator-category
@@ -29,7 +30,7 @@ if [ ! "$EDGE" = "1" ]; then
   echo "EDGE not requested, keeping stable version"
 else
   echo "EDGE requested, updating to latest version"
-  npm i -g npm
+  npm install -g npm
   npm update --save
 fi
 

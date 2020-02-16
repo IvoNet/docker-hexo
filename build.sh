@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 docker_name=ivonet
 image=hexo
-version=0.1
+version=$(cat VERSION)
 
 deploy="false"
 #deploy="true"
